@@ -12,3 +12,8 @@ These are some practice project from the Coursera course and the book Programmin
 ## Other paractices
 + HelloWorld, the begining for scala
 + ProgrammingInScala, the practices from the book <i>Programming in Scala</i>
+
+## Intall
+All of these project can be import into Intellij IDEA, please install Scala plugin first, you can
+refer to the tutorial: https://www.jetbrains.com/idea/features/scala.html
+
