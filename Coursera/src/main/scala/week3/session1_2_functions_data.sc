@@ -34,9 +34,6 @@ object rationals {
 
   val h = new Rational(3)
 
- 
-
-
 
 }
 

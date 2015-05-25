@@ -20,8 +20,6 @@ def main(args: Array[String]) {
   }
 }
 
-
-
 def balance(chars: List[Char]): Boolean = {
   def recurCal(count: Int, chars: List[Char]): Int= {
     if (chars.isEmpty) count

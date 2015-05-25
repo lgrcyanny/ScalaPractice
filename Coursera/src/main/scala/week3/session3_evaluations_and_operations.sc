@@ -40,5 +40,6 @@ object rationals {
 
   x * y
 
+
 }
 
