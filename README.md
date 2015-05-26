@@ -8,6 +8,8 @@ These are some practice project from the Coursera course and the book Programmin
 2. example, the first assignment
 3. recfun, the second assignment for week 1
 4. funsets, the third assignment for week2
+5. objects, the week3 assignment, implemented a TweetSet Class, and I encountered some performance
+   problem, like "union" and "mostRetweeted"
 
 ## Other paractices
 + HelloWorld, the begining for scala
