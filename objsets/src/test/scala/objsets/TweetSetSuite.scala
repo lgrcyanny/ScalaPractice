@@ -77,4 +77,13 @@ class TweetSetSuite extends FunSuite {
       assert(trends.head.user == "a" || trends.head.user == "b")
     }
   }
+
+  test("filter and trending") {
+    lazy val filteredRes = TweetReader.allTweets.filter(tw => tw.user == "gizmodo" && tw.text.contains("18 unlucky people"))
+    assert(size(filteredRes) == 1)
+    lazy val trendingRes= filteredRes.descendingByRetweet
+    assert(!trendingRes.isEmpty)
+    assert(trendingRes.head.user == "gizmodo")
+    assert(trendingRes.tail.isEmpty)
+  }
 }

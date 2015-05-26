@@ -140,15 +140,18 @@ class Empty extends TweetSet {
 class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
   def filterAcc(p: Tweet => Boolean, acc: TweetSet): TweetSet = {
-    if (left.isEmpty && right.isEmpty) acc
-    else if (p(elem))
+    if (p(elem))
       left.filterAcc(p, acc) union right.filterAcc(p, acc.incl(elem))
     else
       left.filterAcc(p, acc) union right.filterAcc(p, acc)
   }
 
   // tail recursion optimization for better performance
-  def union(that: TweetSet): TweetSet = right.union(left.union(that.incl(elem)))
+  // https://class.coursera.org/progfun-005/forum/thread?thread_id=749#post-2813
+  // def union1(that: TweetSet): TweetSet = right.union(left.union(that)).incl(elem) O(n(log(n)))
+  // def union2(that: TweetSet): TweetSet = right.union(that).union(left).incl(elem) O(n^2) + O(log(n^2)
+  // def union3(that: TweetSet): TweetSet = right.union(left.union(that.incl(elem))) O(n(log(n)))
+  def union(that: TweetSet): TweetSet = left.union(right.union(that.incl(elem)))
 
   def isEmpty: Boolean = false
 
