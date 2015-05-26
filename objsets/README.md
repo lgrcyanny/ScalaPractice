@@ -1,5 +1,5 @@
 # Make Summary About TweetSet Implementation
-1. union performance issue<br\>
+1.union performance issue<br\>
 Must use tail recersion optimization
 
 ```scala
@@ -8,7 +8,7 @@ def union(that: TweetSet) = right.union(left.union(that.incl(elem)))
 
 Please refer to [Coursera FAQ](https://class.coursera.org/progfun-005/forum/thread?thread_id=749#post-2813)
 
-2. mostRetweeted performance issue<br\>
+2.mostRetweeted performance issue<br\>
 use lazy val optimization to avoid NoSuchElementException, and calculate leftMost and rightMost only
 once
 
