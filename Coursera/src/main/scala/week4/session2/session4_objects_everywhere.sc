@@ -1,4 +1,4 @@
-import week4.session4._
+import week4.session2._
 
 object session4_objects_everywhere {
   _true && _false

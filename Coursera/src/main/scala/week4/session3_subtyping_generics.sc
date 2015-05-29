@@ -20,3 +20,9 @@ val list = List()
 
 def op = (x: Int, y: Int) => x + y
 list.foldLeft(0)(op)
+
+def f(a: Int): Int = {
+  a
+}
+f(1)
+

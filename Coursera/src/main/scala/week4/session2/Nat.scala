@@ -1,5 +1,5 @@
-package week4.session4
-import week4.session4._
+package week4.session2
+import week4.session2._
 
 /**
  * Created by lgrcyanny on 15/5/25.
