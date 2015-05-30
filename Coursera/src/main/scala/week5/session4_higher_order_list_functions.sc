@@ -32,20 +32,19 @@ ints span (x => x > 2)
 
 def pack[T](xs: List[T]): List[List[T]] = xs match {
   case Nil => Nil
-  case y :: ys =>
-    val (first, rest) = xs span (p => p == y)
+  case x :: xs1 =>
+    val (first, rest) = xs span (p => p == x)
     first :: pack(rest)
 }
 val chars = "aaabcca".toList
 pack(chars)
 
 
-def encode[T](xs: List[T]): List[(T, Int)] = {
-  val packed: List[List[T]]= pack(xs)
-  packed map ((ys: List[T]) => (ys(0), ys.length))
-}
+def encode[T](xs: List[T]): List[(T, Int)] =
+  pack(xs) map (ys => (ys.head, ys.length))
 
 encode(chars)
+
 
 
 

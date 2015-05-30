@@ -41,7 +41,30 @@ class HuffmanSuite extends FunSuite {
 
   test("decode and encode a very short text should be identity") {
     new TestTrees {
+      assert(encode(t1)("ab".toList) == List(0, 1))
       assert(decode(t1, encode(t1)("ab".toList)) === "ab".toList)
+      assert(decode(t1, quickEncode(t1)("ab".toList)) === "ab".toList)
     }
+  }
+
+  test("decode frenchCode") {
+    assert(Huffman.decodedSecret == "huffmanestcool".toList)
+  }
+
+  test("make a huffman tree, encode and decode a long text") {
+    info("The huffman tree is the same as the example tree in assignment4")
+    val chars = "CDEFGHBBBAAAAAAAA".toList
+    val codeTree = Huffman.createCodeTree("CDEFGHBBBAAAAAAAA".toList)
+    val text = "BAC".toList
+    val encodedRes = Huffman.encode(codeTree)(text)
+    assert(encodedRes == List(1, 1, 1, 0, 1, 0, 0, 0))
+    assert(encodedRes == Huffman.quickEncode(codeTree)(text))
+    val decodedRes = Huffman.decode(codeTree, encodedRes)
+    assert(text == decodedRes)
+  }
+
+  test("combine singleton and nill") {
+    assert(Huffman.combine(List()).isEmpty)
+    assert(Huffman.combine(List(new Leaf('c', 1))).length == 1)
   }
 }

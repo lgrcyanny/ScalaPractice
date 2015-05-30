@@ -48,3 +48,4 @@ object session1_more_functions_on_lists {
   def removeAt2[T](n: Int, xs: List[T]): List[T] = (xs take n) ::: (xs drop n + 1)
   removeAt(6, c)
 }
+
