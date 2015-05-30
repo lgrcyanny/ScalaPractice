@@ -57,7 +57,7 @@ Now I found that won't pass the test, So I found I missed the case that when bit
 ```
 
 3.**encode** function issue<br>
-for acculated bits, I use "0 :: bits", it's not correct, becase Cons operation is prepend, I need append, so encode should be "bits ++ List(0)"
+When accumulate bits, I use "0 :: bits", it's not correct, becase Cons operation is prepend, the bits sequence will be reverse, what I need is `append`, so accumulation should be `bits ++ List(0)`
 
 ```scala
   def encode(tree: CodeTree)(text: List[Char]): List[Bit] = {
