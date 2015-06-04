@@ -23,7 +23,28 @@ def isort(xs: List[Int]): List[Int] = {
 
 isort(a)
 
+import scala.math.Ordering
+def isort[T](xs: List[T])(implicit ord: Ordering[T]): List[T] = {
+  def insert(xs: List[T], n: T): List[T] = xs match {
+    case Nil => List(n)
+    case x :: xs1 => {
+      if (ord.lt(n, x))
+        n :: insert(xs1, x)
+      else
+        x :: insert(xs1, n)
+    }
+  }
+  def iter(xs: List[T], acc: List[T]): List[T] = {
+    xs match {
+      case Nil => acc
+      case x :: xs1 => iter(xs1, insert(acc, x))
+    }
+  }
+  iter(xs, Nil)
+}
 
+val list = List(6, 7, 9, 11, 0, 1, -9, 10)
+isort(list)
 
 
 
