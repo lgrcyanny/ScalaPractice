@@ -26,9 +26,9 @@ object Lists {
    * @return The sum of all elements in `xs`
    */
   def sum(xs: List[Int]): Int = {
-    if (!xs.isEmpty)
-      xs.head + sum(xs.tail)
-    else 0
+    def sumIter(xs: List[Int], acc: Int): Int =
+      if (xs.isEmpty) acc else sumIter(xs.tail, xs.head + acc)
+    sumIter(xs, 0)
   }
 
   /**

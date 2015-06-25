@@ -19,6 +19,16 @@ object Session {
 
   sqrt(4)
 
+  def and(x: Boolean, y: => Boolean) = if (x) y else false
 
+  def or(x: Boolean, y: => Boolean) = if (x) true else y
 
+  def fib(n: Int): Int = {
+    def fibIter(i: Int, a: Int, b: Int): Int = {
+      if (i == n) a
+      else fibIter(i + 1, b, a + b)
+    }
+    fibIter(0, 0, 1)
+  }
+  fib(4)
 }

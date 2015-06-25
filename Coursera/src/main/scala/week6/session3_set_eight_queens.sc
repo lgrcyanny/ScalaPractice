@@ -33,4 +33,5 @@ def show(queens: List[Int]): String = {
   "\n" + (lines.mkString("\n"))
 }
 
-(queens(4) map show).mkString("\n")
+//(queens(4) map show).mkString("\n")
+queens(5)
