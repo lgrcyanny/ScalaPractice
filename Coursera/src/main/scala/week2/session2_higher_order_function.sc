@@ -6,7 +6,6 @@ object example {
   sum1(1, 3)
 
 
-
   def sum2(f: Int => Int, a: Int, b: Int): Int = {
     if (a > b) 0 else f(a) + sum2(f, a + 1, b)
   }
@@ -27,12 +26,11 @@ object example {
 
   def factorial(n: Int):Int = {
     def loop(acc: Int, n: Int): Int = {
-      if (n == 0) 1 else loop(acc * n, n - 1)
+      if (n == 1) acc else loop(acc * n, n - 1)
     }
     loop(1, n)
   }
 
   sum3(factorial, 3, 4)
-
 
 }

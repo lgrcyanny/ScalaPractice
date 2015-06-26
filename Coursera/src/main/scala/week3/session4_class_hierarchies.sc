@@ -25,8 +25,9 @@ class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet {
     else this
   }
 
-  def union(other: IntSet): IntSet =
-    ((left union right) union other) incl elem
+  def union(other: IntSet) =
+    left.union(right.union(other.incl(elem)))
+    //((left union right) union other) incl elem
 
   override def toString = "{" + left + elem + right + "}"
 }
@@ -34,7 +35,8 @@ class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet {
 val n1 = new NonEmpty(3, Empty, Empty)
 val n2 = new NonEmpty(1, Empty, Empty)
 val n3 = new NonEmpty(5, Empty, Empty)
-n1 union n2 union n3 // The tree is not balance
+val n4 = new NonEmpty(4, Empty, Empty)
+n1 union n2 union n3 union n4 // The tree is not balance
 
 
 

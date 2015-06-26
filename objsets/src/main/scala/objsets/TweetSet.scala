@@ -149,7 +149,7 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
   // tail recursion optimization for better performance
   // https://class.coursera.org/progfun-005/forum/thread?thread_id=749#post-2813
   // def union1(that: TweetSet): TweetSet = right.union(left.union(that)).incl(elem) O(n(log(n)))
-  // def union2(that: TweetSet): TweetSet = right.union(that).union(left).incl(elem) O(n^2) + O(log(n^2)
+  // def union2(that: TweetSet): TweetSet = right.union(that).union(left).incl(elem) O(n^2)*O(log(n^2)
   // def union3(that: TweetSet): TweetSet = right.union(left.union(that.incl(elem))) O(n(log(n)))
   def union(that: TweetSet): TweetSet = left.union(right.union(that.incl(elem)))
 
@@ -228,15 +228,17 @@ object GoogleVsApple {
   val google = List("android", "Android", "galaxy", "Galaxy", "nexus", "Nexus")
   val apple = List("ios", "iOS", "iphone", "iPhone", "ipad", "iPad")
 
-  lazy val googleTweets: TweetSet = TweetReader.allTweets.filter(tw => google.exists(str => tw.text.contains(str)))
-  lazy val appleTweets: TweetSet = TweetReader.allTweets.filter(tw => apple.exists(str => tw.text.contains(str)))
+  def tweetMentioning(dictionary: List[String]): TweetSet =
+    TweetReader.allTweets.filter(tw => dictionary.exists(word => tw.text.contains(word)))
+
+  lazy val googleTweets: TweetSet = tweetMentioning(google)
+  lazy val appleTweets: TweetSet = tweetMentioning(apple)
 
   /**
    * A list of all tweets mentioning a keyword from either apple or google,
    * sorted by the number of retweets.
    */
   lazy val trending: TweetList = (googleTweets union appleTweets).descendingByRetweet
-
 }
 
 object Main extends App {

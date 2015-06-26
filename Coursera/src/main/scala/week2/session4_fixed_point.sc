@@ -20,12 +20,11 @@ object example {
 
   def averageDamp(f: Double => Double)(x: Double) = (x + f(x)) / 2
   def sqrt2(x: Double) =
-    fixedPoint(averageDamp(y => x / y))(x)
+    fixedPoint(averageDamp(y => x / y))(1.0)
 
   sqrt2(2)
 
   def f = ((x: Int) => ((y: Int) => (x + y)))
   f(1)(2)
-
 }
 
