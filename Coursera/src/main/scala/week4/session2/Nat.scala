@@ -30,15 +30,16 @@ class Succ(val n: Nat) extends Nat {
   def predecessor: Nat = n
 
   def + (that: Nat): Nat = new Succ(n + that)
-  def - (that: Nat): Nat = that.isZero.ifThenElse(n, n - that.predecessor)
+  def - (that: Nat): Nat = that.isZero.ifThenElse(this, n - that.predecessor)
+
   override def toString = {
     def iter(acc: Int, x: Nat): Int = {
       // Since originally, ifThenElse is type (t: T, e: T) => T, t and e are call by value, hence,
       // iter(acc + 1, x.predecessor) will be always calculated, so x.predecessor will throw Error when x is zero
-      // change ifThenEles to clall by name type: (t: => T, e: => T) => T
+      // change ifThenElse to call by name type: (t: => T, e: => T) => T
       x.isZero.ifThenElse(acc, iter(acc + 1, x.predecessor))
     }
-    val number = iter(0, n.successor)
-    number + ""
+    val number = iter(0, this)
+    number.toString
   }
 }

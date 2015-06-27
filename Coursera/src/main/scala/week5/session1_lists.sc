@@ -14,11 +14,15 @@ def isort(xs: List[Int]): List[Int] = {
     case List() => List(x)
     case y :: ys => if (x <= y) x :: xs else y :: insert(x, ys)
   }
-  def iter(origin: List[Int], res: List[Int]): List[Int] = origin match {
-    case Nil => res
-    case p :: ps => iter(ps, insert(p, res))
+//  def iter(origin: List[Int], res: List[Int]): List[Int] = origin match {
+//    case Nil => res
+//    case p :: ps => iter(ps, insert(p, res))
+//  }
+//  iter(xs, Nil)
+  xs match {
+    case Nil => List()
+    case x :: xs1 => insert(x, isort(xs1))
   }
-  iter(xs, Nil)
 }
 
 isort(a)
@@ -34,13 +38,15 @@ def isort[T](xs: List[T])(implicit ord: Ordering[T]): List[T] = {
         x :: insert(xs1, n)
     }
   }
-  def iter(xs: List[T], acc: List[T]): List[T] = {
-    xs match {
-      case Nil => acc
-      case x :: xs1 => iter(xs1, insert(acc, x))
-    }
+//  def iter(xs: List[T], acc: List[T]): List[T] = xs match {
+//    case Nil => acc
+//    case x :: xs1 => iter(xs1, insert(acc, x))
+//  }
+//  iter(xs, Nil)
+  xs match {
+    case Nil => List()
+    case x :: xs1 => insert(isort(xs1), x)
   }
-  iter(xs, Nil)
 }
 
 val list = List(6, 7, 9, 11, 0, 1, -9, 10)

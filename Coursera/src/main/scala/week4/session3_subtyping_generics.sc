@@ -1,28 +1,10 @@
-import week4._
+import week4.{NonEmpty, Empty, IntSet}
+// return an IntSet if all element is positive
+// def assertAllPos[S <: IntSet](r: S): S
 
-//def assertAllPos[S <: IntSet](r: S): S
-
-1 == 2
-
-false < true
-
-val a = List(1, 2, 3, 4)
-a.map(_ + 2)
-a.foreach(println _)
-trait PlaceholderExample {
-  def process[A](f: A => Unit)
-  val set: Set[_ => Unit]
-  //set.foreach(process _) // Error
-  set.foreach(process(_)) // No Error
-}
-
-val list = List()
-
-def op = (x: Int, y: Int) => x + y
-list.foldLeft(0)(op)
-
-def f(a: Int): Int = {
-  a
-}
-f(1)
+// Test Array not covariant
+val a: Array[NonEmpty] = Array(new NonEmpty(1, Empty, Empty))
+//val b: Array[IntSet] = a // Expression type Array[NonEmpty] doesn't comform to type Array[IntSet]
+//b(0) = Empty
+//val s: NonEmpty = a(0)
 

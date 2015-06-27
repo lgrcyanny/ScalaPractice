@@ -22,6 +22,12 @@ case class Var(v: String) extends Expr
 
 Prod(Sum(Prod(Sum(Number(1), Var("x")), Sum(Number(1), Var("y"))), Number(1)), Var("z")).show
 
+Var("Hello").show
+
+Sum(Number(1), Number(2)).show
+
+Sum(Prod(Number(2), Var("x")), Var("y")).show
+
 
 
 

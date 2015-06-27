@@ -1,3 +1,5 @@
+import week4.Empty
+
 object session4_variance {
   // Make List covariant, so that Nil can be object
   trait List[+T] {
@@ -52,8 +54,12 @@ object session4_variance {
     override def toString = "{" + left + elem + right + "}"
   }
 
-  object test {
-    val x: List[String] = Nil
-    def f(xs: List[NonEmpty], s: Empty): List[IntSet] = xs.prepend(s)
-  }
+
+  val x: List[String] = Nil // List[Nothing] <: List[String]
+
+  def f(xs: List[NonEmpty], s: Empty): List[IntSet] = xs.prepend(s)
+
+  val xs = new Cons(new NonEmpty(1, new Empty, new Empty), Nil)
+  f(xs, new Empty)
+
 }

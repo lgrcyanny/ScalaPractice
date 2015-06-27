@@ -141,7 +141,7 @@ object Huffman {
     if (trees.length <= 1) trees
     else {
       val two_elements = trees take 2
-      val new_tree: CodeTree = makeCodeTree(two_elements(0), two_elements(1))
+      val new_tree: CodeTree = makeCodeTree(two_elements(0), two_elements(1)) // This is inner node
       val new_trees = trees drop 2
       val (first, rest) = new_trees span (x => weight(x) <= weight(new_tree)) // Put inner node after outer node
       first ++ List(new_tree) ++ rest
