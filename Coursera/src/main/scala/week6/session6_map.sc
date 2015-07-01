@@ -1,26 +1,22 @@
 val words = Map('h'-> 1, 'e' -> 2, 'o' -> 3, 'l' -> 4, 'l' -> 5, 'o' -> 6)
-
 //words('a') // Throw no such element exception
-
 words get 'h'
+words ++ Map('h' -> 2, 'e' -> 3)
+
 
 def showCharacter(c: Char) = words.get(c) match {
   case Some(c) => c
   case None => "Missing character"
 }
-
 showCharacter('a')
 showCharacter('h')
 
 
 List("a", "b", "c", "c", "d", "a").groupBy(_.head)
-
 words.groupBy(_._1)
-
 words.map{
   case (x, y) => (y, x)
 }
-
 words.toList
 
 
@@ -69,7 +65,8 @@ list collect({
 })
 
 
-List(1, 2, 3, 1, 1, 1).groupBy(_)
+List(1, 2, 3, 1, 1, 1).groupBy(x => x)
+
 
 
 

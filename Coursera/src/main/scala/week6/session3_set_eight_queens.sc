@@ -34,4 +34,13 @@ def show(queens: List[Int]): String = {
 }
 
 //(queens(4) map show).mkString("\n")
-queens(5)
+queens(4)
+
+val q = new week6.Queens
+q.queens(5)
+
+
+
+
+
+

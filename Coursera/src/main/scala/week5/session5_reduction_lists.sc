@@ -34,3 +34,5 @@ def lengthFun2[T](xs: List[T]): Int =
   (xs foldLeft 0)((c, x) => c + 1)
 lengthFun2(data)
 
+
+

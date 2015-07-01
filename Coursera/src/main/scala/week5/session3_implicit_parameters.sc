@@ -21,3 +21,4 @@ val nums = List(-4, 7, 1, -5, 7, 9)
 val words = List("today", "world", "aha", "blalal", "ahsst")
 msort(nums)
 msort(words)
+

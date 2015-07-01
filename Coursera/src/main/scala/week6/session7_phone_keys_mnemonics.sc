@@ -22,7 +22,7 @@ object session7_phone_keys_mnemonics {
 
   // a map from a digit strings to words list
   // an inverted index of words
-  lazy  val wordsForNum: Map[String, Seq[String]] =
+  lazy val wordsForNum: Map[String, Seq[String]] =
     words groupBy wordCode withDefaultValue(Seq())
 
 
@@ -41,6 +41,6 @@ object session7_phone_keys_mnemonics {
   def translate(number: String): Set[String] =
     encode(number) map (_.mkString(" "))
 
-  // val res = translate("7225247386")
-  // res.foreach(println)
+  //val res = translate("7225247386")
+  //res.foreach(println)
 }
