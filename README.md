@@ -11,6 +11,7 @@ These are some practice project from the Coursera course and the book Programmin
 5. objects, the week3 assignment, implemented a TweetSet Class, and I encountered some performance
    problem, like "union" and "mostRetweeted"
 6. patmat, the week4 assignment, implemented the Huffman encoding and decoding algorithm
+7. forcom, the week6 assignment, implemented sentence anagrams with immutable collections List, Set and Map
 
 
 ## Other paractices

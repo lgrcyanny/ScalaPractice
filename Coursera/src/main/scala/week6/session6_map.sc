@@ -56,16 +56,17 @@ p1.terms(7)
 
 p1 + p2
 
-Map(("US", "Washington"), ("China", "Beijing"))
-
-val list = List(1, 2, 3, 4)
-
-list collect({
-  case x if x % 2 == 0 => x + " is even"
-})
+val countries = Map(("US", "Washington"), ("China", "Beijing"))
+countries.groupBy(x => x._1.length)
 
 
-List(1, 2, 3, 1, 1, 1).groupBy(x => x)
+
+
+
+
+
+
+
 
 
 
