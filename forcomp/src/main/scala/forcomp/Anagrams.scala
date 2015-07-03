@@ -189,4 +189,20 @@ object Anagrams {
     }
   }
 
+  def sentenceAnagramsMemo(sentence: Sentence): List[Sentence] = {
+    def sentenceAnagramsMemoByOccurences(occurrences: Occurrences, memo: Map[Occurrences, List[Word]]): List[Sentence] = {
+      if (occurrences.isEmpty) List(List())
+      else {
+        for {
+          subset <- combinations(occurrences)
+          word <- if (memo.contains(subset)) memo(subset) else dictionaryByOccurrences(subset)
+          if !word.isEmpty
+          rest <- sentenceAnagramsMemoByOccurences(subtract(occurrences, subset),
+                    if (memo.contains(subset)) memo else memo + (subset -> dictionaryByOccurrences(subset)))
+        } yield word :: rest
+      }
+    }
+    if (sentence.isEmpty) List(List())
+    else sentenceAnagramsMemoByOccurences(sentenceOccurrences(sentence), Map())
+  }
 }

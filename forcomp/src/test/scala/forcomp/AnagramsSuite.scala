@@ -120,4 +120,18 @@ class AnagramsSuite extends FunSuite {
     assert(sentenceAnagrams(sentence).toSet === expected.toSet)
   }
 
+  test("sentence anagrams with memo: I love you") {
+    val sentence = List("I", "Love", "you")
+    info(sentenceAnagrams(sentence).toString())
+    val expected = List(
+      List("olive", "you"),
+      List("Lev", "Io", "you"),
+      List("Lev", "you", "Io"),
+      List("Io", "Lev", "you"),
+      List("Io", "you", "Lev"),
+      List("you", "olive"),
+      List("you", "Lev", "Io"),
+      List("you", "Io", "Lev"))
+    assert(sentenceAnagramsMemo(sentence).toSet === expected.toSet)
+  }
 }
