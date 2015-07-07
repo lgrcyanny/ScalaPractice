@@ -11,6 +11,7 @@ class Pouring(capacity: Vector[Int]) {
   trait Move {
     def change(state: State): State
   }
+  // glass is the index of in the State Vector
   case class Empty(glass: Int) extends Move {
     def change(state: State): State = state updated (glass, 0)
   }
@@ -23,7 +24,7 @@ class Pouring(capacity: Vector[Int]) {
       state updated (from, state(from) - amount) updated (to, state(to) + amount)
     }
   }
-  // Glasses represent by index
+  // Glasses represent by index starting from 0
   val glasses = 0 until capacity.length
   val moves = (for (glass <- glasses) yield Empty(glass)) ++
     (for (glass <- glasses) yield Fill(glass)) ++
