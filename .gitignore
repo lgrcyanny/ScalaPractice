@@ -4,3 +4,12 @@ target
 .classpath
 .project
 lib_managed
+.DS_Store
+test.scala
+test.*
+*test*
+*.iml
+scala-source
+scala-source/*
+LearningScala/*
+LearningScala
