@@ -8,8 +8,9 @@ It's some scala practice when reading book *Programming In Scala*
 - chapter5: Basic Types and Operations
 - chapter6: Functional Objects
 - chapter7: Built-in control structures
-- chapter8: Control Abstraction
-- chapter9: Composition and Inheritance
+- chapter8: Functions and Closures
+- chapter9: Control Abstraction
+- chapter10: Composition and Inheritance
 
 # How to Build
 ```shell
