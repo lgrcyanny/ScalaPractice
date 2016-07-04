@@ -6,7 +6,7 @@ package com.chapter19
 trait Queue[+T] {
   def head: T
   def tail: Queue[T]
-  def enqueue[U >: T](x: U): Queue[T]
+  def enqueue[U >: T](x: U): Queue[U]
 }
 
 object Queue {
@@ -28,6 +28,8 @@ object Queue {
     }
 
     def enqueue[U >: T](x: U): Queue[T] = new QueueImpl(leading, x :: trailing).asInstanceOf[Queue[T]]
+
+    override def toString = mirror.leading.mkString(",") + "," + mirror.trailing.reverse.mkString(",")
   }
 }
 

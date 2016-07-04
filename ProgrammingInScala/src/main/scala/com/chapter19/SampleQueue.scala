@@ -3,23 +3,29 @@ package com.chapter19
 /**
   * Created by lgrcyanny on 16/5/30.
   */
-class SampleQueue[T](val leading: List[T], val trailing: List[T]) {
+class SampleQueue[+T](private[this] var leading: List[T], private[this] var trailing: List[T]) {
 
-  private def mirror = {
+  private def mirror() = {
     if (leading.isEmpty) {
-      new SampleQueue(trailing.reverse, Nil)
+      while (!trailing.isEmpty) {
+        leading = trailing.head :: leading
+        trailing = trailing.tail
+      }
     } else {
       this
     }
   }
 
-  def head = mirror.leading.head
+  def head = {
+    mirror()
+    leading.head
+  }
 
   override def toString = leading.toString + trailing.reverse
 
-  def tail = {
-    val q = mirror
-    new SampleQueue(q.leading.tail, q.trailing)
+  def tail: SampleQueue[T] = {
+    mirror()
+    new SampleQueue(leading.tail, trailing)
   }
 }
 
