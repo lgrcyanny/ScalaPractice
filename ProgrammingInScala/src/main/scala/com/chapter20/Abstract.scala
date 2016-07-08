@@ -1,5 +1,7 @@
 package com.chapter20
 
+import scala.collection.mutable
+
 /**
   * Created by lgrcyanny on 16/6/30.
   */
@@ -35,7 +37,6 @@ object Animals {
       println("Eating food")
     }
   }
-
   def main(args: Array[String]) {
     val d = new Dog
     d.eat(new Meat)
