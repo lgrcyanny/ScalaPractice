@@ -47,7 +47,7 @@ object CaseStudy {
     }
     type Currency = Dollar
     def make(cents: Long) = new Dollar {
-      override val amount: Long = amount
+      override val amount: Long = cents
     }
     val Cent = make(1)
     val Dollar = make(100)
