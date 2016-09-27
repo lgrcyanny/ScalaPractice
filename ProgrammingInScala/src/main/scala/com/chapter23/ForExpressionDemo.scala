@@ -19,6 +19,6 @@ object Demo {
 
 object Test {
   def main(args: Array[String]) {
-    for (y <- Demo) yield y
+//    for (y <- Demo) yield y
   }
 }
