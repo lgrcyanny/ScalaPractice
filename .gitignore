@@ -11,3 +11,4 @@ scala-source/*
 LearningScala/*
 LearningScala
 *.class
+*.sc
