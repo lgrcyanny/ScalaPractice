@@ -10,6 +10,7 @@
 
     <properties>
         <scala.version>2.11.7</scala.version>
+        <scalaBinaryVersion>2.11</scalaBinaryVersion>
     </properties>
 
     <repositories>
@@ -189,5 +190,15 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <repositories>
+        <repository>
+            <id>artima</id>
+            <name>Artima Maven Repository</name>
+            <url>http://repo.artima.com/releases</url>
+        </repository>
+    </repositories>
+
+
 
 </project>
