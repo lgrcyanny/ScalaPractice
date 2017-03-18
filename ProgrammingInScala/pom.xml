@@ -13,27 +13,33 @@
         <scalaBinaryVersion>2.11</scalaBinaryVersion>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>scala-tools.org</id>
-            <name>Scala-Tools Maven2 Repository</name>
-            <url>http://scala-tools.org/repo-releases</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>scala-tools.org</id>-->
+            <!--<name>Scala-Tools Maven2 Repository</name>-->
+            <!--<url>http://scala-tools.org/repo-releases</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>scala-tools.org</id>
-            <name>Scala-Tools Maven2 Repository</name>
-            <url>http://scala-tools.org/repo-releases</url>
-        </pluginRepository>
-    </pluginRepositories>
+    <!--<pluginRepositories>-->
+        <!--<pluginRepository>-->
+            <!--<id>scala-tools.org</id>-->
+            <!--<name>Scala-Tools Maven2 Repository</name>-->
+            <!--<url>http://scala-tools.org/repo-releases</url>-->
+        <!--</pluginRepository>-->
+    <!--</pluginRepositories>-->
 
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>${scala.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-parser-combinators -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-parser-combinators</artifactId>
+            <version>2.11.0-M4</version>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
