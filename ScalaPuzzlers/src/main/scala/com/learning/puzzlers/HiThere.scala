@@ -1,4 +1,4 @@
-package com.learning.puzzlers.chapter1
+package com.learning.puzzlers
 
 /**
   * Created by lgrcyanny on 17/3/22.
