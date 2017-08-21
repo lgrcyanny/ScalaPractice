@@ -6,8 +6,8 @@ package com.learning.puzzlers
 object SeeSelf {
 
   def main(args: Array[String]): Unit = {
-    val s1: String = s1
-    val s2: String = s1 + s2
+//    val s1: String = s1
+//    val s2: String = s1 + s2
   }
 
 }
