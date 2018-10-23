@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package com.cyanny.learning.akka;
+option java_multiple_files = false;
+option java_package = 'com.cyanny.learning.akka';
+option java_outer_classname = "EventMessage";
+
+message Event {
+    optional int32 event_id = 1;
+    optional string event_info = 2;
+    optional AbnormalState state = 3;
+}
+
+message AbnormalState {
+    optional string s1 = 1;
+    optional string s2 = 2;
+}
