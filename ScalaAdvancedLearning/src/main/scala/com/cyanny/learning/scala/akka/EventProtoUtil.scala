@@ -18,7 +18,9 @@ object EventProtoUtil {
     println(s"EventState: ${eventMsg.toString}")
   }
 
+  case class Person(name: String, age: String)
+
   def main(args: Array[String]): Unit = {
-    testMerge()
+    println("hello world")
   }
 }

@@ -31,9 +31,8 @@ object CpuUsageDemo {
     process(1000)
     process(10000)
     process(100000)
-    process(1000000)
-    process(10000000)
-//    process(1000000000)
+//    process(1000000)
+//    process(10000000)
   }
 
 }
